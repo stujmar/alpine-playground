@@ -10,7 +10,14 @@
 </head>
 <body>
     <div class="flex w-full items-start justify-center h-screen bg-gray-100">
-        <div class="mt-32">
+        <div class="mt-32" x-data="{animals: [
+            {name: 'Duck', legs: 2},
+            {name: 'Kangaroo', legs: 2},
+            {name: 'Bear', legs: 4},
+            {name: 'Dog', legs: 4},
+            {name: 'Cow', legs: 4},
+            {name: 'Spider', legs: 8},
+            ]}">
             <h1 class="text-xl text-gray-900 mb-8">Animal Search</h1>
             <label class="blick text-gray-800">Minimum Legs</label>
             <input 
