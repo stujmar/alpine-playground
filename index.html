@@ -11,17 +11,17 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <title>Alpine</title>
 </head>
-<body class="relative">
+<body class="relative" x-data="{isOpen: false}">
     <div class="flex w-full items-center justify-center h-screen">
-        <button class="text-xl px-8 py-4 bg-blue-600 block text-blue-100 rounded-lg shadow-lg focus:outline-none">
+        <button x-on:click="isOpen = true" class="text-xl px-8 py-4 bg-blue-600 block text-blue-100 rounded-lg shadow-lg focus:outline-none">
             Open Modal
         </button>
     </div>
-    <div class="w-full h-full bg-gray-900 absolute top-0 bg-opacity-50 flex items-center justify-center">
+    <div x-show="isOpen" class="w-full h-full bg-gray-900 absolute top-0 bg-opacity-50 flex items-center justify-center">
         <div class="bg-white rounded p-8 -mt-64 w-64 shadow-lg">
             <p class="text-xl">This is a modal</p>
             <div class="flex justify-end">
-                <button class="mt-8 text-blue-600 focus:outline-none">Close</button>
+                <button x-on:click="isOpen = false" class="mt-8 text-blue-600 focus:outline-none">Close</button>
             </div>
         </div>
     </div>
