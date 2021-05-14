@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+    rel="stylesheet"
+    />
     <title>Alpine</title>
 </head>
-<body>
-    <div class="flex w-full items-start justify-center h-screen bg-gray-100">
+<body class="relative">
+    <a href="index.html" class="bg-green-500 block text-green-100 shadow absolute l-6 px-4 py-2 m-6 rounded hover:bg-green-400">back</a>
+    <div class="flex w-full items-start justify-center h-screen bg-green-100">
         <div class="mt-32" x-data="{animals: [
             {name: 'Duck', legs: 2},
             {name: 'Kangaroo', legs: 2},
@@ -23,7 +26,7 @@
             <input 
                 type="number"
                 id="legs"
-                class="block border border-gray-300 rounded mt-2 px-4 py-2 focus:outline-none focus:border-blue-400"
+                class="block border border-gray-300 rounded mt-2 px-4 py-2 focus:outline-none focus:border-green-400"
                 min="0"
             />
             <hr class="mt-4" />
