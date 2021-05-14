@@ -11,22 +11,31 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <title>Alpine</title>
 </head>
-<body class="bg-gray-100">
+<body x-data="{activeTab: 0}" class="bg-gray-100 box-border">
     <div class="bg-blue-600 shadow shadow-lg">
         <div class="flex max-w-xl mx-auto pt-16">
-            <div class="flex-1 border-blue-100 py-6 text-center font-semibold text-xl text-blue-100 border-b-4 cursor-pointer hover:line-through">
+            <div 
+                x-on:click="activeTab = 0" 
+                :class="{'font-semibold border-b-4 text-red-100' : activeTab === 0, 'text-blue-200 hover:underline' : activeTab !== 0}"
+                class="flex-1 border-blue-100 py-6 text-center text-xl text-blue-200 cursor-pointer">
                 FEATURES
             </div>
-            <div class="flex-1 border-blue-100 py-6 text-center text-xl text-blue-200 cursor-pointer  hover:line-through">
+            <div 
+                x-on:click="activeTab = 1"
+                :class="{'font-semibold border-b-4 text-red-100' : activeTab === 1, 'text-blue-200 hover:underline' : activeTab !== 1}"
+                class="flex-1 border-blue-100 py-6 text-center text-xl cursor-pointer">
                 INSTALLATION
             </div>
-            <div class="flex-1 border-blue-100 py-6 text-center text-xl text-blue-200 cursor-pointer  hover:line-through">
+            <div 
+                x-on:click="activeTab = 2" 
+                :class="{'font-semibold border-b-4 text-red-100' : activeTab === 2, 'text-blue-200 hover:underline' : activeTab !== 2}"
+                class="flex-1 border-blue-100 py-6 text-center text-xl cursor-pointer">
                 TUTORIAL
             </div>
         </div>
     </div>
     <div class="max-w-xl mx-auto">
-        <div class="pt-16 space-y-2">
+        <div x-show="activeTab === 0" class="pt-16 space-y-2">
             <p>
                 Alpine.js offers you the reactive and declarative nature of big frameworks like Vue or React at a much lower cost.
             </p>
@@ -34,7 +43,7 @@
                 You get to keep your DOM, and sprinkle in behaviour as you see fit.
             </p>
         </div>
-        <div class="pt-16 space-y-2">
+        <div x-show="activeTab === 1" class="pt-16 space-y-2">
             <p>
                 From CDNL Add the following script to the end of your head section. 
             </p>
@@ -42,7 +51,7 @@
                 That's it. It will initialize itself.
             </p>
         </div>
-        <div class="pt-16 space-y-2">
+        <div x-show="activeTab === 2" class="pt-16 space-y-2">
             <p>
                 x-data declares a new component scope. It tells the framework to initialize a new component with the following data object.
             </p>
