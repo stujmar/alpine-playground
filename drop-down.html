@@ -20,6 +20,7 @@
             <div class="relative" x-data="{ isOpen: false }">
                 <button 
                     x-on:click="isOpen = !isOpen"
+                    @keydown.escape="isOpen = false"
                     class="flex items-center focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-800" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
@@ -58,8 +59,16 @@
             </div>
         </nav>
     </header>
-    <div class="block text-center mt-12 mx-auto">
-        <p class="text-blue-800 font-semibold">Let's made a dropdown</p>
+    <div class=" text-center mt-12 w-48 mx-auto flex">
+        <p class="text-blue-800 font-semibold">Click the dropdown</p>
+        <svg width="30" height="30" class="pb-2" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M35 12C35 10.8954 34.1046 10 33 10L15 10C13.8954 10 13 10.8954 13 12C13 13.1046 13.8954 14 15 14H31V30C31 31.1046 31.8954 32 33 32C34.1046 32 35 31.1046 35 30L35 12ZM12.4142 35.4142L34.4142 13.4142L31.5858 10.5858L9.58579 32.5858L12.4142 35.4142Z" fill="#2C5282"/>
+            </svg>
+            
+            
+    </div>
+    <div class="container mx-auto px-4 xl:px-64 mt-12 mb-12">
+        <h2 class="text-2xl font-bold">Modal</h2>
     </div>
 </body>
 </html>
