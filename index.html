@@ -33,11 +33,12 @@
     <div x-data="{toggled: false}"
         class="flex flex-col justify-center items-center -mt-48"
     >
+    <!-- @click="" is shorthand for x-on:click="" -->
         <button 
-            x-on:click="toggled = !toggled"
+            @click="toggled = !toggled"
             class="shadow px-4 py-2 rounded-lg bg-red-400 font-semibold text-red-100 hover:bg-red-500 focus:outline-none"
         >Toggle</button>
-        <a  href="#"
+        <a  href="drop-down.html"
             x-show="toggled"
             class="font-bold text-red-600 mt-4"    
         >SECRET LINK</a>
