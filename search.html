@@ -8,12 +8,13 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
     rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <title>Alpine</title>
 </head>
 <body class="relative">
     <a href="index.html" class="bg-green-500 block text-green-100 shadow absolute l-6 px-4 py-2 m-6 rounded hover:bg-green-400">back</a>
     <div class="flex w-full items-start justify-center h-screen bg-green-100">
-        <div class="mt-32" x-data="{animals: [
+        <div class="mt-32" x-data="{legsAmount: 0, animals: [
             {name: 'Duck', legs: 2},
             {name: 'Kangaroo', legs: 2},
             {name: 'Bear', legs: 4},
@@ -28,27 +29,15 @@
                 id="legs"
                 class="block border border-gray-300 rounded mt-2 px-4 py-2 focus:outline-none focus:border-green-400"
                 min="0"
+                x-model.number="legsAmount"
             />
             <hr class="mt-4" />
             <ul>
-                <li class="mt-4 px-4 py-2 rounded shadow bg-white">
-                    <p>Duck</p>
-                </li>
-                <li class="mt-4 px-4 py-2 rounded shadow bg-white">
-                    <p>Kangaroo</p>
-                </li>
-                <li class="mt-4 px-4 py-2 rounded shadow bg-white">
-                    <p>Bear</p>
-                </li>
-                <li class="mt-4 px-4 py-2 rounded shadow bg-white">
-                    <p>Dog</p>
-                </li>
-                <li class="mt-4 px-4 py-2 rounded shadow bg-white">
-                    <p>Cow</p>
-                </li>
-                <li class="mt-4 px-4 py-2 rounded shadow bg-white">
-                    <p>Spider</p>
-                </li>
+                <template x-for="animal in animals.filter(animal => animal.legs >= legsAmount)">
+                    <li class="mt-4 px-4 py-2 rounded shadow bg-white">
+                        <p x-text="animal.name"></p>
+                    </li>
+                </template>
             </ul> 
         </div>
     </div>
