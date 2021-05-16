@@ -24,6 +24,7 @@
         </button>
     <nav 
         x-show="sideNav"
+        @click.away="sideNav = false"
         class="bg-white container absolute h-screen mx-auto w-48 px-2 py-2 border-t-4 border-blue-700">
 
             <button
