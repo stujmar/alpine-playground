@@ -157,16 +157,27 @@
         </div>
 
         <!-- Tabs Section from the Scrimba Tutorial -->
-        <section class="rounded-lg border-2 border-blue-600 mx-12 overflow-hidden">
+        <section
+            x-data="{activeTab: 0}"
+            class="rounded-lg border-2 border-blue-600 mx-12 overflow-hidden">
             <div class="m-0 flex justify-between overflow-hidden">
-                <button class="focus:outline-none bg-white text-blue-600 px-2 py-1 w-full m-0 font-semibold hover:font-bold">SNAP</button>
-                <button class="focus:outline-none bg-white text-blue-600 px-2 py-1 w-full m-0 font-semibold hover:font-bold">CRACKLE</button>
-                <button class="focus:outline-none bg-white text-blue-600 px-2 py-1 w-full m-0 font-semibold hover:font-bold">POP</button>
+                <button 
+                    @click="activeTab = 0"
+                    :class="{'bg-white' : activeTab === 0, 'bg-gray-200' : activeTab !== 0}"
+                    class="focus:outline-none bg-white text-blue-600 px-2 py-1 w-full m-0 font-semibold hover:font-bold">SNAP</button>
+                <button 
+                    @click="activeTab = 1"
+                    :class="{'bg-white' : activeTab === 1, 'bg-gray-200' : activeTab !== 1}"
+                    class="focus:outline-none bg-white text-blue-600 px-2 py-1 w-full m-0 font-semibold hover:font-bold">CRACKLE</button>
+                <button 
+                    @click="activeTab = 2"
+                    :class="{'bg-white' : activeTab === 2, 'bg-gray-200' : activeTab !== 2}"
+                    class="focus:outline-none bg-white text-blue-600 px-2 py-1 w-full m-0 font-semibold hover:font-bold">POP</button>
             </div>
             <div class="bg-white p-12">
-                <p>Some info about Snap</p>
-                <p>Some info about Crackle</p>
-                <p>Some info about Pop</p>
+                <p x-show="activeTab == 0">Some info about Snap</p>
+                <p x-show="activeTab == 1">Some info about Crackle</p>
+                <p x-show="activeTab == 2">Some info about Pop</p>
             </div>
         </section>
 
