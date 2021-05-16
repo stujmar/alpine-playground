@@ -40,7 +40,7 @@
             <ul class="">
                 <hr class="mt-12">
                 <li>
-                    <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
+                    <a href="image-selection.html" class="flex items-center px-3 py-3 hover:bg-gray-200">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
@@ -85,7 +85,7 @@
                     @click.away="isOpen = false"
                     class="absolute shadow font-normal bg-white overflow-hidden rounded w-48 border mt-2 py-1 right-0 z-20">
                     <li>
-                        <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
+                        <a href="image-selection.html" class="flex items-center px-3 py-3 hover:bg-gray-200">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
@@ -159,19 +159,19 @@
         <!-- Tabs Section from the Scrimba Tutorial -->
         <section
             x-data="{activeTab: 0}"
-            class="rounded-lg border-2 border-blue-600 mx-12 overflow-hidden">
+            class="mx-12 overflow-hidden">
             <div class="m-0 flex justify-between overflow-hidden">
                 <button 
                     @click="activeTab = 0"
-                    :class="{'bg-white' : activeTab === 0, 'bg-gray-200' : activeTab !== 0}"
+                    :class="{'bg-white' : activeTab === 0, 'bg-gray-300' : activeTab !== 0}"
                     class="focus:outline-none bg-white text-blue-600 px-2 py-1 w-full m-0 font-semibold hover:font-bold">SNAP</button>
                 <button 
                     @click="activeTab = 1"
-                    :class="{'bg-white' : activeTab === 1, 'bg-gray-200' : activeTab !== 1}"
+                    :class="{'bg-white' : activeTab === 1, 'bg-gray-300' : activeTab !== 1}"
                     class="focus:outline-none bg-white text-blue-600 px-2 py-1 w-full m-0 font-semibold hover:font-bold">CRACKLE</button>
                 <button 
                     @click="activeTab = 2"
-                    :class="{'bg-white' : activeTab === 2, 'bg-gray-200' : activeTab !== 2}"
+                    :class="{'bg-white' : activeTab === 2, 'bg-gray-300' : activeTab !== 2}"
                     class="focus:outline-none bg-white text-blue-600 px-2 py-1 w-full m-0 font-semibold hover:font-bold">POP</button>
             </div>
             <div class="bg-white p-12">
