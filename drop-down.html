@@ -11,11 +11,61 @@
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <title>Alpine</title>
     </head>
-<body class="bg-gray-300 text-gray-800">
+<body 
+    x-data="{sideNav: true}"
+    class="bg-gray-300 text-gray-800 relative">
+    <button
+        @click="sideNav = true"
+        x-show="!sideNav" 
+        class="absolute bg-white rounded full m-3 shadow focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+    <nav 
+        x-show="sideNav"
+        class="bg-white container absolute h-screen mx-auto w-48 px-2 py-2 border-t-4 border-blue-700">
+
+            <button
+            @click="sideNav = false"
+            class="text-green-400 font-bold rounded-full shadow absolute right-4"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+
+        </button>
+        <div class="">
+            <ul class="">
+                <hr class="mt-12">
+                <li>
+                    <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <p class="pl-4 font-semibold text-green-400">Account</p>
+                    </a>
+                    <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                          <p class="pl-4 font-semibold text-green-400">Settings</p>
+                    </a>
+                    <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                          </svg>
+                          <p class="pl-4 font-semibold text-green-400">Logout</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <header class="shadow-md bg-white border-t-4 border-blue-700">
-        <nav class="container mx-auto px-4 flex items-center justify-between py-4">
+        <nav class="container mx-auto px-4 flex items-center justify-end py-4">
             <ul class="flex">
-                <li><a href="#" class="text-blue-800 font-semibold">Home</a></li>
+                <li><a href="#" class="text-blue-800 mr-12 font-semibold">Home</a></li>
             </ul>
             <div class="relative" x-data="{ isOpen: false }">
                 <button 
@@ -59,44 +109,46 @@
             </div>
         </nav>
     </header>
-    <div class=" text-center mt-12 w-48 mx-auto flex">
-        <p class="text-blue-800 font-semibold">Click the dropdown</p>
-        <svg width="30" height="30" class="pb-2" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M35 12C35 10.8954 34.1046 10 33 10L15 10C13.8954 10 13 10.8954 13 12C13 13.1046 13.8954 14 15 14H31V30C31 31.1046 31.8954 32 33 32C34.1046 32 35 31.1046 35 30L35 12ZM12.4142 35.4142L34.4142 13.4142L31.5858 10.5858L9.58579 32.5858L12.4142 35.4142Z" fill="#2C5282"/>
-            </svg>
-    </div>
+    <div class="pl-64"> <!-- Wrapper to keep everything away from sidebar -->
+        <div class=" text-center mt-12 w-48 mx-auto flex">
+            <p class="text-blue-800 font-semibold">Click the dropdown</p>
+            <svg width="30" height="30" class="pb-2" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M35 12C35 10.8954 34.1046 10 33 10L15 10C13.8954 10 13 10.8954 13 12C13 13.1046 13.8954 14 15 14H31V30C31 31.1046 31.8954 32 33 32C34.1046 32 35 31.1046 35 30L35 12ZM12.4142 35.4142L34.4142 13.4142L31.5858 10.5858L9.58579 32.5858L12.4142 35.4142Z" fill="#2C5282"/>
+                </svg>
+        </div>
 
-    <!-- Second Scrimba Model Tutorial -->
-    <!-- https://www.youtube.com/watch?v=VerLjLcXsTk -->
+        <!-- Second Scrimba Model Tutorial -->
+        <!-- https://www.youtube.com/watch?v=VerLjLcXsTk -->
 
-    <div 
-        x-data="{modalToggle: false}"
-        class="container mx-auto px-4 xl:px-64 mt-12 mb-12">
-        <h2 class="text-2xl font-bold">Modal</h2>
+        <div 
+            x-data="{modalToggle: false}"
+            class="container mx-auto px-4 xl:px-64 mt-12 mb-12">
+            <h2 class="text-2xl font-bold">Modal</h2>
 
-        <div>
-            <button 
-                @click="modalToggle = !modalToggle
-                $nextTick(() => $refs.modalCloseButton.focus())"
-                class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded focus:outline-none"> Open Modal</button>
-            <div 
-                x-show="modalToggle"
-                style="background-color: rgba(0, 0, 0, .5)"
-                class="mx-auto absolute top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto">
-                <div class="container mx-auto rounded p-4 mt-2 overflow-y-auto">
-                    <div 
-                        @click.away="modalToggle = false"
-                        class="bg-green-200 rounded px-8 py-8">
-                        <h1 class="font-bold text-2xl mb-3">Modal Title</h1>
-                        <div class="modal-body">
-                            <p>This is the content in the modal's body</p>
-                        </div>
-                        <div class="mt-4">
-                            <button 
-                                @click="modalToggle = false"
-                                x-ref="modalCloseButton"
-                                class="bg-blue-700 text-white px-4 py-4 mt-4 text-sm rounded focus:outline-none"
-                                >Close Modal</button>
+            <div>
+                <button 
+                    @click="modalToggle = !modalToggle
+                    $nextTick(() => $refs.modalCloseButton.focus())"
+                    class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded focus:outline-none"> Open Modal</button>
+                <div 
+                    x-show="modalToggle"
+                    style="background-color: rgba(0, 0, 0, .5)"
+                    class="mx-auto absolute top-0 left-0 w-full h-screen fixed flex items-center shadow-lg overflow-y-auto">
+                    <div class="container mx-auto rounded p-4 mt-2 overflow-y-auto">
+                        <div 
+                            @click.away="modalToggle = false"
+                            class="bg-white rounded px-8 py-8">
+                            <h1 class="font-bold text-2xl mb-3">Modal Title</h1>
+                            <div class="modal-body">
+                                <p>This is the content in the modal's body</p>
+                            </div>
+                            <div class="mt-4">
+                                <button 
+                                    @click="modalToggle = false"
+                                    x-ref="modalCloseButton"
+                                    class="bg-blue-700 text-white px-4 py-4 mt-4 text-sm rounded focus:outline-none"
+                                    >Close Modal</button>
+                            </div>
                         </div>
                     </div>
                 </div>
