@@ -76,7 +76,8 @@
 
         <div>
             <button 
-                @click="modalToggle = !modalToggle"
+                @click="modalToggle = !modalToggle
+                $nextTick(() => $refs.modalCloseButton.focus())"
                 class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded focus:outline-none"> Open Modal</button>
             <div 
                 x-show="modalToggle"
@@ -85,7 +86,7 @@
                 <div class="container mx-auto rounded p-4 mt-2 overflow-y-auto">
                     <div 
                         @click.away="modalToggle = false"
-                        class="bg-white rounded px-8 py-8">
+                        class="bg-green-200 rounded px-8 py-8">
                         <h1 class="font-bold text-2xl mb-3">Modal Title</h1>
                         <div class="modal-body">
                             <p>This is the content in the modal's body</p>
@@ -93,7 +94,9 @@
                         <div class="mt-4">
                             <button 
                                 @click="modalToggle = false"
-                                class="bg-blue-700 text-white px-4 py-4 mt-4 text-sm rounded focus:outline-none">Close Modal</button>
+                                x-ref="modalCloseButton"
+                                class="bg-blue-700 text-white px-4 py-4 mt-4 text-sm rounded focus:outline-none"
+                                >Close Modal</button>
                         </div>
                     </div>
                 </div>
