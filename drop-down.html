@@ -12,13 +12,13 @@
         <title>Alpine</title>
     </head>
 <body 
-    x-data="{sideNav: true}"
+    x-data="{sideNav: false}"
     class="bg-gray-300 text-gray-800 relative">
     <button
         @click="sideNav = true"
         x-show="!sideNav" 
         class="absolute bg-white rounded full m-3 shadow focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -65,7 +65,7 @@
     <header class="shadow-md bg-white border-t-4 border-blue-700">
         <nav class="container mx-auto px-4 flex items-center justify-end py-4">
             <ul class="flex">
-                <li><a href="#" class="text-blue-800 mr-12 font-semibold">Home</a></li>
+                <li><a href="index.html" class="text-blue-800 mr-12 font-semibold">Home</a></li>
             </ul>
             <div class="relative" x-data="{ isOpen: false }">
                 <button 
