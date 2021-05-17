@@ -12,7 +12,7 @@
         <title>Alpine</title>
     </head>
 <body class="bg-green-400" x-data="{ active: 'image1' }">
-    <div class="container mx-auto mx-4 mt-8">
+    <div class="container mx-auto mx-4 mt-12">
         <div>
             <img src="/imgs/bees.png" alt="" class="mx-auto" style="width: 36rem" x-show="active == 'image1'">
             <img src="/imgs/space.png" alt="" class="mx-auto" style="width: 36rem" x-show="active == 'image2'">
@@ -21,17 +21,20 @@
         <div class="flex items-center justify-center">
             <a 
                 @click="active = 'image1'"
-                href="#" class="hover:boder-blue-500">
+                href="#" class="hover:boder-blue-500 bg-white"
+                :class="{'opacity-75' : active == 'image1'}">
                 <img src="/imgs/bees.png" alt="" class="w-48">
             </a>
             <a 
                 @click="active = 'image2'"
-                href="#" class="hover:boder-blue-500">
+                href="#" class="hover:boder-blue-500 bg-white"
+                :class="{'opacity-75' : active == 'image2'}">
                 <img src="/imgs/space.png" alt="" class="w-48">
             </a>
             <a 
                 @click="active = 'image3'"
-                href="#" class="hover:boder-blue-500">
+                href="#" class="hover:boder-blue-500"
+                :class="{'opacity-75' : active == 'image3'}">
                 <img src="/imgs/water.png" alt="" class="w-48">
             </a>
         </div>
