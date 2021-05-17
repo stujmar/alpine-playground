@@ -11,19 +11,27 @@
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <title>Alpine</title>
     </head>
-<body class="bg-gray-400">
-    <div class="container mx-auto mx-4 mt-4">
+<body class="bg-green-400" x-data="{ active: 'image1' }">
+    <div class="container mx-auto mx-4 mt-8">
         <div>
-            <img src="" alt="">
+            <img src="/imgs/bees.png" alt="" class="mx-auto" style="width: 36rem" x-show="active == 'image1'">
+            <img src="/imgs/space.png" alt="" class="mx-auto" style="width: 36rem" x-show="active == 'image2'">
+            <img src="/imgs/water.png" alt="" class="mx-auto" style="width: 36rem" x-show="active == 'image3'">
         </div>
-        <div class="flex items-center justify-center mt-4">
-            <a href="#" class="border border-transparent hover:boder-blue-500">
+        <div class="flex items-center justify-center">
+            <a 
+                @click="active = 'image1'"
+                href="#" class="hover:boder-blue-500">
                 <img src="/imgs/bees.png" alt="" class="w-48">
             </a>
-            <a href="#" class="border border-transparent hover:boder-blue-500">
+            <a 
+                @click="active = 'image2'"
+                href="#" class="hover:boder-blue-500">
                 <img src="/imgs/space.png" alt="" class="w-48">
             </a>
-            <a href="#" class="border border-transparent hover:boder-blue-500">
+            <a 
+                @click="active = 'image3'"
+                href="#" class="hover:boder-blue-500">
                 <img src="/imgs/water.png" alt="" class="w-48">
             </a>
         </div>
