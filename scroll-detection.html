@@ -12,8 +12,12 @@
         <title>Alpine</title>
     </head>
 <body class="bg-gray-400">
-    <div>
-        <nav class="p-4 mt-4 w-full fixed font-semibold">
+    <div x-data="{atTop: true}">
+        <nav 
+            class="p-4 mt-4 w-full fixed font-semibold"
+            :class="{ 'bg-white shadow-md' : !atTop}"
+            @scroll.window="atTop = (window.pageYOffset > 20) ? false : true"
+        >
             Top Nav goes here
         </nav>
         <div class="container mx-auto p-6 pt-20">
