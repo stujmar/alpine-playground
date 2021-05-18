@@ -36,21 +36,22 @@
             <template x-for="faq in faqs" :key='faq.question'>
                 <div>
                     <button 
-                    
+                        @click="faq.isOpen = !faq.isOpen"
                         class="w-full font bold border-b border-gray-400 py-3 flex justify-between items-center mt-4 focus:outline-none">
                         <div x-text="faq.question"></div>
                         <svg 
-                            
+                            x-show="!faq.isOpen"
                             xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <svg 
-                            
+                            x-show="faq.isOpen"
                             xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </button>
                     <div 
+                        x-show="faq.isOpen"
                         x-text="faq.answer"
                         class="text-gray-700 text-sm mt-2">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
