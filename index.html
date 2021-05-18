@@ -11,10 +11,13 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <title>Alpine</title>
 </head>
-<body class="relative pt-8" x-data="{isOpen: false}">
-    <a href="tabs.html" class="bg-blue-500 text-blue-100 shadow px-4 py-2 m-4 ml-8 rounded hover:bg-blue-400">tabs demo</a>
-    <a href="search.html" class="bg-green-500 text-green-100 shadow px-4 py-2 m-4 rounded hover:bg-green-400">search demo</a>
-    <a href="scroll-detection.html" class="bg-orange-500 text-orange-100 shadow px-4 py-2 m-4 rounded hover:bg-orange-400">scroll demo</a>
+<body class="relative" x-data="{isOpen: false}">
+    <div class="flex flex-wrap p-2">
+        <a href="tabs.html" class="bg-blue-500 font-semibold text-blue-100 shadow px-4 py-2 m-2 rounded hover:bg-blue-400">tabs demo</a>
+        <a href="search.html" class="bg-green-500 font-semibold text-green-100 shadow px-4 py-2 m-2 rounded hover:bg-green-400">search demo</a>
+        <a href="scroll-detection.html" class="bg-orange-500 font-semibold text-orange-100 shadow px-4 py-2 m-2 rounded hover:bg-orange-400">scroll demo</a>
+        <a href="accordian.html" class="bg-yellow-500 font-semibold text-orange-100 shadow px-4 py-2 m-2 rounded hover:bg-yellow-600">loop demo</a>
+    </div>
     <div class="flex w-full items-center justify-center h-screen">
         <button 
             x-on:click="isOpen = true" 
