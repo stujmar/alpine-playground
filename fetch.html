@@ -11,9 +11,19 @@
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <title>Alpine</title>
     </head>
-<body class="bg-gray-400 text-gray-800">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center text-center justify-center h-screen text-2xl italics">Quote goes here</div>
+<body class="bg-gray-400 text-gray-800 relative">
+    <a href="index.html" class="bg-blue-500 absolute text-blue-100 shadow px-4 py-2 m-4 right-0 top-0 rounded hover:bg-blue-400">back</a>
+        <div 
+            class="container mx-auto px-4"
+            x-data="{quote: ''}"
+            x-init="
+                fetch('https://api.kanye.rest')
+                .then(res => res.json())
+                .then(data => quote = data.quote)
+            "
+            >
+            <div x-text="`&quot;${quote}&quot;`" class="flex items-end text-center justify-center h-64 text-2xl italics"></div>
+            <div class="text-right mt-4">-Kanye West</div>
         </div>
 </body>
 </html>
