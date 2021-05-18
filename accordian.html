@@ -20,7 +20,7 @@
             isOpen: false
         },
         {
-            qusetion: 'Question 2 goes here',
+            question: 'Question 2 goes here',
             answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
             isOpen: false
         },
@@ -38,7 +38,7 @@
                     <button 
                     
                         class="w-full font bold border-b border-gray-400 py-3 flex justify-between items-center mt-4 focus:outline-none">
-                        <div>Question 1 goes here</div>
+                        <div x-text="faq.question"></div>
                         <svg 
                             
                             xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -51,7 +51,7 @@
                         </svg>
                     </button>
                     <div 
-                        
+                        x-text="faq.answer"
                         class="text-gray-700 text-sm mt-2">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                     </div>
