@@ -17,7 +17,11 @@
             <h2 class="text-2xl font-bold">Todo App</h2>
 
             <div class="mt-6 mb-6">
-                <input type="text" class="shadow w-full px-2 py-2">
+                <input type="text" class="shadow w-full px-2 py-2" 
+                x-model="todoTitle"
+                @keydown.enter="addTodo()"
+                >
+
             </div>
 
             <ul class="mb-6">
@@ -52,7 +56,12 @@
                     title: 'Draw',
                     isComplete: false
                     },
-                ]
+                ],
+                todoTitle: '',
+                todoId: 4,
+                addTodo() {
+                    if
+                }
             }
         }
     </script>
