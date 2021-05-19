@@ -32,7 +32,7 @@
                             <input type="checkbox" x-model="todo.isComplete">
                             <div class="ml-3" x-text="todo.title"></div>
                         </div>
-                        <button class="text-xl ml-2 focus:outline-none">&times;</button>
+                        <button class="text-xl ml-2 focus:outline-none" @click="deleteTodo(todo.id)">&times;</button>
                     </li>
                 </template>
             </ul>
@@ -71,6 +71,9 @@
                     })
                     this.todoId++;
                     this.todoTitle = '';
+                },
+                deleteTodo(id) {
+                    this.todos = this.todos.filter(todo => todo.id !== id);
                 }
             }
         }
