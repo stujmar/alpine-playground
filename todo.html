@@ -60,7 +60,16 @@
                 todoTitle: '',
                 todoId: 4,
                 addTodo() {
-                    if
+                    if (this.todoTitle.trim() === '') {
+                        return;
+                    }
+                    this.todos.push({
+                        id: this.todoId,
+                        title: this.todoTitle,
+                        isComplete: false
+                    })
+                    this.todoId++;
+                    this.todoTitle = '';
                 }
             }
         }
