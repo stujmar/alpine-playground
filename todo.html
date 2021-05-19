@@ -12,7 +12,7 @@
         <title>Alpine</title>
     </head>
 <body class="bg-gray-400 text-gray-800">
-    <div class="container mx-auto max-w-sm px-4 my-4">
+    <div class="container mx-auto max-w-sm px-4 my-4" x-data="todos()">
         <div class="bg-white shadow-md rounded px-6 py-4">
             <h2 class="text-2xl font-bold">Todo App</h2>
 
@@ -21,30 +21,40 @@
             </div>
 
             <ul class="mb-6">
-                <li class="flex items-center justify-between">
-                    <div class="flex items-center">
-                        <input type="checkbox">
-                        <div class="ml-3">Finish Alpine Tutorial</div>
-                    </div>
-                    <button class="text-xl ml-2 focus:outline-none">&times;</button>
-                </li>
-                <li class="flex items-center justify-between">
-                    <div class="flex items-center">
-                        <input type="checkbox">
-                        <div class="ml-3">Read a book</div>
-                    </div>
-                    <button class="text-xl ml-2 focus:outline-none">&times;</button>
-                </li>
-                <li class="flex items-center justify-between">
-                    <div class="flex items-center">
-                        <input type="checkbox">
-                        <div class="ml-3">Draw a pictue</div>
-                    </div>
-                    <button class="text-xl ml-2 focus:outline-none">&times;</button>
-                </li>
+                <template x-for="todo in todos" :key="todo.id">
+                    <li class="flex items-center justify-between">
+                        <div class="flex items-center" :class="{'line-through' : todo.isComplete}">
+                            <input type="checkbox">
+                            <div class="ml-3" x-text="todo.title"></div>
+                        </div>
+                        <button class="text-xl ml-2 focus:outline-none">&times;</button>
+                    </li>
+                </template>
             </ul>
         </div>
     </div>
-    
+    <script>
+        function todos() {
+            return {
+                todos: [
+                    {
+                    id: 1,
+                    title: 'Read',
+                    isComplete: false
+                    },
+                    {
+                    id: 2,
+                    title: 'Write',
+                    isComplete: false
+                    },
+                    {
+                    id: 3,
+                    title: 'Draw',
+                    isComplete: false
+                    },
+                ]
+            }
+        }
+    </script>
 </body>
 </html>
