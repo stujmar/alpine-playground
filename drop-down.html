@@ -82,10 +82,10 @@
                 </button>
                 <ul 
                     x-show="isOpen"
-                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter="transition ease-out duration-150"
                     x-transition:enter-start="opacity-0 transform scale-90"
                     x-transition:enter-end="opacity-100 transform scale-100"
-                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave="transition ease-in duration-150"
                     x-transition:leave-start="opacity-100 transform scale-100"
                     x-transition:leave-end="opacity-0 transform scale-90"
                     @click.away="isOpen = false"
@@ -139,11 +139,24 @@
                     class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded focus:outline-none"> Open Modal</button>
                 <div 
                     x-show="modalToggle"
+                    x-transition:enter="transition ease-out duration-150"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
                     style="background-color: rgba(0, 0, 0, .5)"
-                    class="mx-auto absolute top-0 left-0 w-full h-screen fixed flex items-center shadow-lg overflow-y-auto">
+                    class="mx-auto absolute origin-center top-0 left-0 w-full h-screen fixed flex items-center shadow-lg overflow-y-auto">
                     <div class="container mx-auto rounded p-4 mt-2 overflow-y-auto">
                         <div 
                             @click.away="modalToggle = false"
+                            x-show="modalToggle"
+                            x-transition:enter="transition ease-out duration-150"
+                            x-transition:enter-start="opacity-0 transform scale-90"
+                            x-transition:enter-end="opacity-100 transform scale-100"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 transform scale-100"
+                            x-transition:leave-end="opacity-0 transform scale-90"
                             class="bg-white rounded px-8 py-8">
                             <h1 class="font-bold text-2xl mb-3">Modal Title</h1>
                             <div class="modal-body">
